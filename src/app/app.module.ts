@@ -38,13 +38,13 @@ import { MatInputModule} from '@angular/material/input';
     MatSliderModule,
     CommonModule,
     ReactiveFormsModule,
-    MatIconModule
-  //   RouterModule.forRoot([
-  //     {
-  //        path: 'login',
-  //        component:LoginComponent
-  //     }
-  //  ])
+    MatIconModule,
+    RouterModule.forRoot([
+      {
+         path: 'login',
+         component:LoginComponent
+      }
+   ])
   ],
   // exports:[CommonModule,FormsModule, ReactiveFormsModule,],
   providers: [],

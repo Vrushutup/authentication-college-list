@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import {MatCardModule} from '@angular/material/card';
@@ -10,8 +10,9 @@ import {MatCardModule} from '@angular/material/card';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  name: any;
+  name!: any;
   formGroup!: FormGroup;
+ 
   constructor(private _formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router) { }
@@ -19,9 +20,9 @@ export class LoginComponent implements OnInit {
       this.initForm()
     }
   
-    initForm() {
+    initForm() {  
       this.formGroup = this._formBuilder.group({
-        name: [null, [Validators.required, Validators.name]],
+        name: new FormControl(['', [Validators.required]]),
       });
     }
     // login() {
@@ -34,7 +35,11 @@ export class LoginComponent implements OnInit {
     handleClear(){
       this.formGroup.reset();
     }
-    btnClick=  () => {
+    btnClick(data: { name: String; }){
+      this.name = data.name;
+      localStorage.setItem("name",this.name)
       this.router.navigateByUrl('/home');
-     };
+      console.log(this.name);
+    };
 }
+     

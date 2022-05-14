@@ -1,18 +1,18 @@
 <div class="form-container ">
 	<h1>Login</h1>
-	<form [formGroup]="formGroup">
+	<form [formGroup]="formGroup" >
 		<mat-form-field>
-			<input type="text" pattern="[a-z]+" required matInput placeholder="Your Name (Only accepts lowercase letters)" formControlName="name">
+			<input type="text" pattern="[a-z]+" required matInput placeholder="Your Name (Only accepts lowercase letters)" formControlName="name"  [(ngModel)]="name"  >
 			<!-- <mat-error *ngIf="name?.errors?.['required']">
 				Name is required
 			</mat-error> 
 			<mat-error *ngIf="name?.errors?.['name']">
 				Please enter a correct Name format
-			</mat-error>  --> 
-		</mat-form-field>
+			</mat-error>   -->
+		</mat-form-field> 
 		<div class="center margin-top"> 
-			<button class="login" mat-raised-button color="primary" type="submit" (click)="btnClick()"  >Continue  <a class="list-link" routerLink="home"></a></button>
-			<button class="clear" (click)="handleClear()">Cancel</button>
+			<button class="login" mat-raised-button color="primary" type="button" (click)="btnClick(formGroup.value)" >Continue  <a class="list-link" routerLink="home"></a></button>
+			<button class="clear" type="button" (click)="formGroup.reset()">Cancel</button>
 		 </div>
 			</form>
 	</div>
