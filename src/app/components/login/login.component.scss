@@ -1,0 +1,23 @@
+
+*{
+    justify-content: center;
+}
+button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 13px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+  }
+  .clear:hover{
+    background-color: rgb(191, 191, 237);
+  }
+  .login:hover{
+      background-color:rgb(80, 80, 161);
+  }
