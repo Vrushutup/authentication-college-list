@@ -1,12 +1,11 @@
 <div>
 <mat-toolbar class="list" color="primary">
   <div class="left">
-      Welcome 
+      Welcome {{name}}
     </div>
     <div>
-
-        <button mat-button class="logout" type="button">
-            <mat-icon  (click)="btnClick()">logout<a class="login-link" routerLink=""></a></mat-icon>Logout
+        <button mat-button class="logout" type="button" (click)="btnClick()" >
+            <mat-icon  >logout<a class="login-link" routerLink=""></a></mat-icon> Logout
         </button>
         <span> 
         </span>

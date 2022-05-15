@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
       // localStorage.setItem("counter",this.counter+1)
       this.router.navigateByUrl('/home');
       console.log(this.name);
-      alert("welcome "+ this.name);
     };
 }
      

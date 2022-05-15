@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  name!: any;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-   
+    this.name=localStorage.getItem('name')
   }
+
   btnClick(){
     this.router.navigateByUrl('/');
       localStorage.removeItem('name');
