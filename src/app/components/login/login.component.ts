@@ -12,14 +12,14 @@ import {MatCardModule} from '@angular/material/card';
 export class LoginComponent implements OnInit {
   name!: any;
   formGroup!: FormGroup;
- 
+ counter=0
   constructor(private _formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router) { }
     ngOnInit() {
       this.initForm()
     }
-  
+    
     initForm() {  
       this.formGroup = this._formBuilder.group({
         name: new FormControl(['', [Validators.required]]),
@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     // login() {
     //   this.formGroup.markAllAsTouched()
     //   if (this.formGroup.valid) {
-    //     this.authService.login(this.formGroup.value.name)
-    //   }
+      //     this.authService.login(this.formGroup.value.name)
+      //   }
       
     // }
     handleClear(){
@@ -38,8 +38,10 @@ export class LoginComponent implements OnInit {
     btnClick(data: { name: String; }){
       this.name = data.name;
       localStorage.setItem("name",this.name)
+      // localStorage.setItem("counter",this.counter+1)
       this.router.navigateByUrl('/home');
       console.log(this.name);
+      alert("welcome "+ this.name);
     };
 }
      
