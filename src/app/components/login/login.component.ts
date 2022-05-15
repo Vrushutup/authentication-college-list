@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
@@ -42,5 +42,9 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/home');
       console.log(this.name);
     };
+    _textValue!: string;
+ConvertToLower(evt: string) {
+    this._textValue = evt.toLowerCase();
+}
 }
      

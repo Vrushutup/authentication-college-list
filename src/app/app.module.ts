@@ -15,7 +15,12 @@ import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule} from '@angular/material/input';
-
+import  {MatTableModule} from '@angular/material/table'
+import {HttpClientModule,HttpClient} from '@angular/common/http'
+// import { HttpModule } from '@angular/http';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,10 +40,15 @@ import { MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatToolbarModule,
     MatInputModule,
+    MatSelectModule,
     MatSliderModule,
     CommonModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatPaginatorModule,
+    HttpClientModule,
+    MatSortModule,
+    MatTableModule,
     RouterModule.forRoot([
       {
          path: 'login',
