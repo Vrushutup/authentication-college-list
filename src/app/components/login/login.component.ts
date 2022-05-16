@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router) { }
     ngOnInit() {
-      this.initForm()
+      this.initForm();
+      localStorage.removeItem('name');
     }
     
     initForm() {  
