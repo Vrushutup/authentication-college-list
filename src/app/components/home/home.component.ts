@@ -10,27 +10,32 @@ import { DataService } from 'src/app/core/data.service';
 })
 export class HomeComponent implements OnInit {
   name!: any;
+  ans!:number
   constructor(private router: Router,
     private service:DataService) { }
 
-displayedColumns=['name','country','domains'];
+displayedColumns=['name','state','domains'];
 dataSource!:MatTableDataSource<any>;
 
 @ViewChild('paginator') paginator!:MatPaginator
   ngOnInit(): void {
     this.name=localStorage.getItem('name')
-     this.service.getUserData().subscribe((response:any)=>{
+    this.service.getUserData().subscribe((response:any)=>{
       this.dataSource=new MatTableDataSource(response)
+      this.ans=response.length
       this.dataSource.paginator=this.paginator;
-     })
+    })
   }
-
+  
   btnClick(){
     this.router.navigateByUrl('/');
-      localStorage.removeItem('name');
+    localStorage.removeItem('name');
+    // localStorage.setItem('ans',this.ans)
   }
   filterData($event:any){
     this.dataSource.filter=$event.target.value;
+    // this.ans=this.ans
   }
+  
 
 }
