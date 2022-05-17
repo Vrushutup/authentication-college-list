@@ -10,5 +10,6 @@ export class DataService {
  getUserData(){
    return this.http.get('http://universities.hipolabs.com/search?country=india')
  }
+ 
 
 }

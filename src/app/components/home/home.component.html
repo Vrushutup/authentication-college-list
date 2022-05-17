@@ -17,16 +17,16 @@
         <span class="contries">
             <mat-form-field appearance="fill">
                 <mat-label>Select an option</mat-label>
-             <mat-select>
-                   <mat-option value="1">India</mat-option> 
-                  <mat-option value="2">China</mat-option>
-                  <mat-option value="3">England</mat-option> 
-                  <mat-option value="3">Wales</mat-option> 
-                  <mat-option value="3">Spain</mat-option> 
-                  <mat-option value="3">France</mat-option> 
-                  <mat-option value="3">Ireland</mat-option> 
-                  <mat-option value="3">USA</mat-option> 
-                  <mat-option value="3">Mexico</mat-option> 
+             <mat-select (selectionChange)="onChange($event)">
+                   <mat-option value="India">India</mat-option> 
+                  <mat-option value="China">China</mat-option>
+                  <mat-option value="England">England</mat-option> 
+                  <mat-option value="Wales">Wales</mat-option> 
+                  <mat-option value="Spain">Spain</mat-option> 
+                  <mat-option value="France">France</mat-option> 
+                  <mat-option value="Ireland">Ireland</mat-option> 
+                  <mat-option value="USA">USA</mat-option> 
+                  <mat-option value="Mexico">Mexico</mat-option> 
                 </mat-select>
               </mat-form-field>
             </span>
@@ -47,16 +47,14 @@
           <th mat-header-cell *matHeaderCellDef>College Name </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
-       <ng-container matColumnDef="state">
-          <th mat-header-cell *matHeaderCellDef>State</th>
+       <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef>Country</th>
           <td mat-cell *matCellDef="let element"> {{element.country}} </td>
         </ng-container>
        <ng-container matColumnDef="domains">
           <th mat-header-cell *matHeaderCellDef>Domains</th>
           <td mat-cell *matCellDef="let element">
             <a href="{{element.web_pages}}" target="_blank" rel="noreferrer noopener">{{element.domains}}</a>
-
-
             </td>
         </ng-container>  
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
